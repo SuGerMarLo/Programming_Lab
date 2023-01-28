@@ -745,10 +745,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea39723b22b9e334798a8076134c85d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rb: {fileID: 1471151979}
   _playerSpeed: 10
-  _transform: {fileID: 0}
-  _rotation: {x: 0, y: 0, z: 0}
+  _jump: 10
 --- !u!1001 &1519859634
 PrefabInstance:
   m_ObjectHideFlags: 0

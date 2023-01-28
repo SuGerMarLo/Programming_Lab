@@ -4,46 +4,48 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public Rigidbody _rb;
-    public float _playerSpeed = 10f;
-    public Transform _transform;
-    public Vector3 _rotation;
+    private Rigidbody _rb;
+    public float _playerSpeed;
+    public float _jump;
 
     // Start is called before the first frame update
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _transform = GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        _rotation = transform.rotation.eulerAngles.normalized;
         Moving();
+        Jump();
+    }
+
+    public void Jump()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            checkJump();
+        }
     }
 
     public void Moving()
     {
-        Vector3 movementDir = new Vector3();
-        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            movementDir += new Vector3(0f, 0f, 1f);
-        }
-        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-        {
-            movementDir += new Vector3(0f, 0f, -1f);
-        }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
-        {
-            movementDir += new Vector3(-1f, 0f, 0f);
-        }
-        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-        {
-            movementDir += new Vector3(1f, 0f, 0f);
-        }
+        float xinput = Input.GetAxis("Horizontal");
+        float zinput = Input.GetAxis("Vertical");
+        Vector3 dir = new Vector3(xinput, 0, zinput) * _playerSpeed;
+        dir.y = _rb.velocity.y;
+        _rb.velocity = dir;
 
-        _rb.velocity = movementDir * (_playerSpeed);
+        Vector3 orientation = new Vector3(xinput, 0, zinput);
+        if (orientation.magnitude > 0)
+        {
+            transform.forward = orientation;
+        }
+    }
+
+    public void checkJump()
+    {
+        _rb.AddForce(Vector3.up * _jump, ForceMode.Impulse);
     }
 }
