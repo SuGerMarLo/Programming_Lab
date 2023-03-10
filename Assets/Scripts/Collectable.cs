@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class Collectable : MonoBehaviour
 {
+    public string nameCollectable;
     public int score;
 
-    private void OnCollisionEnter(Collision other)
+    public Collectable(string name, int scorevalue, int restoreHPvalue)
     {
-        if (other.gameObject.tag == "Player")
-        {
-            ScoreManager.scoremanager.UpdateScore(score);
-            Debug.Log("Collided!");
-            Destroy(gameObject);
-        }
+        this.nameCollectable = name;
+        this.score = scorevalue;
+    }
+
+    public void UpdateScore()
+    {
+        ScoreManager.scoremanager.UpdateScore(score);
     }
 }

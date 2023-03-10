@@ -756,10 +756,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1084057226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b57800c004e8f43bbbf328828e398c, type: 3}
+  m_Script: {fileID: 11500000, guid: 63a969e51e2973a4e8ced9096498d199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 1
 --- !u!64 &1084057231
 MeshCollider:
   m_ObjectHideFlags: 0
