@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Stats : Health
 {
+
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.tag == "Enemy")
