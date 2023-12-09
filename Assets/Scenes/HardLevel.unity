@@ -229,6 +229,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiPrefab: {fileID: 2550852182990047820, guid: d7f5bfe291c909947b6f2fcd702577da, type: 3}
   target: {fileID: 1409480005}
+--- !u!114 &77992702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77992694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6f83aa8ea497ad4aa2a42d13fb7e089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &99651358
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +576,18 @@ MonoBehaviour:
   nameCollectable: Coin
   score: 1
   restoreHP: 0
+--- !u!114 &306667462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306667453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9c8adb7077f7514d82ed538853bcef4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &332611935
 PrefabInstance:
   m_ObjectHideFlags: 0
