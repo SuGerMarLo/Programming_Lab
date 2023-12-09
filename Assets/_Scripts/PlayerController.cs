@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour, IDataPersistance
         if(isGrounded)
         {
             rb.velocity = new Vector3(rb.velocity.x, jump, rb.velocity.z);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/MainJump", GetComponent<Transform>().position);
         }
     }
 
@@ -93,6 +94,7 @@ public class PlayerController : MonoBehaviour, IDataPersistance
     {
         Rigidbody rbBullet = Instantiate(projectile, projectilePos.position, Quaternion.identity).GetComponent<Rigidbody>();
         rbBullet.AddForce(Vector3.forward * 32f, ForceMode.Impulse);
+        FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/Shot", GetComponent<Transform>().position);
     }
 
     private void OnDrawGizmos() {

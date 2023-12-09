@@ -82,6 +82,8 @@ public class EnemyController : MonoBehaviour
         {
             Rigidbody bulletRb = Instantiate(projectile, projectilePos.transform.position, Quaternion.identity).GetComponent<Rigidbody>();
             bulletRb.AddForce(transform.forward * 32f, ForceMode.Impulse);
+            FMODUnity.RuntimeManager.PlayOneShot("event:/Sounds/EnemyShot", GetComponent<Transform>().position);
+
 
             alreadyAttacked = true;
             Invoke(nameof(ResetAttack), timeBetweenAttacks);
